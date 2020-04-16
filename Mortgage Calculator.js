@@ -12,31 +12,81 @@ function calc() {
     result.innerHTML = result.value
     if (Payment.value < result.value) {
 
-        isok.innerHTML = "סכום גבוה, תנסה להקטין את הקרן או תגדיל את התקופה" ;
-    }
-    else
-    {
+        isok.innerHTML = "סכום גבוה, תנסה להקטין את הקרן או תגדיל את התקופה";
+    } else {
         isok.innerHTML = "הסכום נמוך, הינך יכול לשלם אותו";
     }
-
-
-
 }
 
-function checkInput(parameter, errorElement) {
-    let errorParagraph = document.getElementById(errorElement)
+function checkInput(event) {
+    let value = Number(event.target.value)
 
 
-    if (isNaN(parameter)) {
-        errorParagraph.style.display = 'block'
+
+    if (isNaN(value)) {
+        FundAmount.style.border = '2px solid red'
+        document.getElementById('FundAmountError').innerHTML = 'נא להזין רק מספרים'
+    } else {
+        FundAmount.style.border = ''
+        document.getElementById('FundAmountError').innerHTML = ''
     }
-     else
-     {
-        errorParagraph.style.display = 'none'
-    }
-
 }
+FundAmount.addEventListener(
+    'change',
+    checkInput
+)
+
+function checkInput2(event) {
+    let value = Number(event.target.value)
 
 
 
+    if (isNaN(value)) {
+        Interest.style.border = '2px solid red'
+        document.getElementById('InterestError').innerHTML = 'נא להזין רק מספרים'
+    } else {
+        Interest.style.border = ''
+        document.getElementById('InterestError').innerHTML = ''
+    }
+}
+Interest.addEventListener(
+    'change',
+    checkInput2
+)
 
+function checkInput3(event) {
+    let value = Number(event.target.value)
+
+
+
+    if (isNaN(value)) {
+        Years.style.border = '2px solid red'
+        document.getElementById('YearsError').innerHTML = 'נא להזין רק מספרים'
+    } else {
+        Years.style.border = ''
+        document.getElementById('YearsError').innerHTML = ''
+    }
+}
+Years.addEventListener(
+    'change',
+    checkInput3
+)
+
+
+function checkInput4(event) {
+    let value = Number(event.target.value)
+
+
+
+    if (isNaN(value)) {
+        Payment.style.border = '2px solid red'
+        document.getElementById('PaymentError').innerHTML = 'נא להזין רק מספרים'
+    } else {
+        Payment.style.border = ''
+        document.getElementById('PaymentError').innerHTML = ''
+    }
+}
+Payment.addEventListener(
+    'change',
+    checkInput4
+)

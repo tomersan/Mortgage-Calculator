@@ -14,22 +14,25 @@
         <p>מחשבון משכנתא</p>
     </div>
     <div class="input">
-        <input type="text" id=FundAmount placeholder="הזן קרן" onchange="checkInput(this.value,'ErrorFundAmount')">
-        <p id="ErrorFundAmount">שדה לא חוקי</p>
+        <input type="text" id=FundAmount placeholder="הזן קרן">
     </div>
+    <p id="FundAmountError"></p>
+
     <div class="input">
-        <input type="text" id=Interest value="3.5" onchange="checkInput(this.value,'ErrorInterest')">
-        <p id="ErrorInterest">שדה לא חוקי</p>
+        <input type="text" id=Interest value="3.5">
     </div>
+    <p id="InterestError"></p>
+
     <div class="input">
-        <input type="text" id=Years placeholder="הזן שנים" onchange="checkInput(this.value,'ErrorYears')">
-        <p id="ErrorYears">שדה לא חוקי</p>
+        <input type="text" id=Years placeholder="הזן שנים">
     </div>
+    <p id="YearsError"></p>
+
     <div class="input">
-        <input type="text" id=Payment placeholder="הזן תשלום חודשי רצוי"
-            onchange="checkInput(this.value,'ErrorPayment')">
-        <p id="ErrorPayment">שדה לא חוקי</p>
+        <input type="text" id=Payment placeholder="הזן תשלום חודשי רצוי">
     </div>
+    <p id="PaymentError"></p>
+
     <div class="button">
         <button id="btn" onclick="calc()">
             חשב משכנתא
