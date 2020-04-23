@@ -27,16 +27,21 @@ let arrayInputerror = [
 
 function calc() {
 
-    result.value = Number(Fund.value) * (1 + (Number(Interest.value / 100))) / (Number(Years.value) * 12)
+    result.value = Number(Fund.value) * (1 + (Number(Interest.value / 100))) / (Number(Years.value) * 12);
 
-    if (isNaN(Fund) || isNaN(Interest) || isNaN(Payment) || isNaN(Years.value)) {
+    if (isNaN(result.value) || result.value == Infinity) {
         isok.innerHTML = "";
+        result.innerHTML = ""
 
-    } else {
+    } 
+    else {
+        
         if (Payment.value < result.value) {
             result.innerHTML = result.value
             isok.innerHTML = "סכום גבוה, תנסה להקטין את הקרן או תגדיל את התקופה";
-        } else {
+
+        } 
+        else {
             result.innerHTML = result.value
             isok.innerHTML = "הסכום נמוך, הינך יכול לשלם אותו";
         }
