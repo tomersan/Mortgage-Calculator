@@ -29,7 +29,7 @@ function calc() {
 
     result.value = Number(Fund.value) * (1 + (Number(Interest.value / 100))) / (Number(Years.value) * 12)
 
-    if (isNaN(Fund) || isNaN(Interest) || isNaN(Payment) || isNaN(Years)) {
+    if (isNaN(Fund) || isNaN(Interest) || isNaN(Payment) || isNaN(Years.value)) {
         isok.innerHTML = "";
 
     } else {
