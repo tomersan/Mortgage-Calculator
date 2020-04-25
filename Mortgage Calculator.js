@@ -32,6 +32,16 @@ function calc() {
     if (isNaN(result.value) || result.value == Infinity) {
         isok.innerHTML = "";
         result.innerHTML = ""
+        for(let j =0 ; j < arrayInputerror.length; j++){
+
+            if (arrayInput[j].value == "") {
+                arrayInput[j].style.border = '2px solid red'
+                arrayInputerror[j].innerHTML = 'נא להזין מספרים'
+            } else {
+                arrayInput[j].style.border = ''
+                arrayInputerror[j].innerHTML = ''
+            }
+            }
 
     } 
     else {
@@ -61,10 +71,10 @@ for (let i = 0; i < arrayInput.length; i++) {
 
 
 
-        if (isNaN(value)) {
+        if (isNaN(value) || value=="") {
             arrayInput[i].style.border = '2px solid red'
 
-            error.innerHTML = 'נא להזין רק מספרים'
+            error.innerHTML = 'נא להזין מספרים'
         } else {
             arrayInput[i].style.border = ''
             error.innerHTML = ''
